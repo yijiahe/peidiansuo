@@ -1,18 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
-public class MeshCreate : MonoBehaviour
+public class MeshCreate
 {
-    public Mesh createMesh;
 
-    void Start()
-    {
-        GetComponent<MeshFilter>().mesh = createMesh = CreatePlaneMesh();
-    }
-
-    Mesh CreatePlaneMesh()
+    public static Mesh CreateQuadMesh()
     {
         Mesh mesh = new Mesh();
         //顶点坐标
@@ -52,15 +44,5 @@ public class MeshCreate : MonoBehaviour
         mesh.normals = nor;
 
         return mesh;
-    }
-
-    void OnDrawGizmos()
-    {
-        if (createMesh == null)
-            GetComponent<MeshFilter>().mesh = createMesh = CreatePlaneMesh();
-        for (int i = 0; i < createMesh.vertices.Length; i++)
-        {
-            Gizmos.DrawSphere(transform.TransformPoint(createMesh.vertices[i]), 0.05f * (i + 1));
-        }
     }
 }

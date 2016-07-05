@@ -45,13 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MeshFunction\MeshCreate.cs" />
+     <Compile Include="Assets\Scripts\Room\Base\EBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Room\Base\EObject.cs" />
+     <Compile Include="Assets\Scripts\Room\MeshFunction\MeshCreate.cs" />
+     <Compile Include="Assets\Scripts\Room\ObjectSelect\ObjectSelect.cs" />
+     <Compile Include="Assets\Scripts\Room\Wall\Wall.cs" />
+     <Compile Include="Assets\Scripts\Room\Wall\WallInfo.cs" />
      <Compile Include="Assets\Scripts\WwwFun\AnalysisPage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\CallWebAction.cs" />
      <Compile Include="Assets\Scripts\WwwFun\JsonAnalysis.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WebPath.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwEvent.cs" />
-     <Compile Include="Assets\Scripts\WwwFun\WwwFun.cs" />
+     <Compile Include="Assets\Scripts\WwwFun\WwwFunction.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwMemeryManage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwObject.cs" />
  <Reference Include="UnityEngine.UI">
@@ -61,10 +66,10 @@
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/WorkProjects/Unity5.4/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>D:/WorkProjects/Unity5.4/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

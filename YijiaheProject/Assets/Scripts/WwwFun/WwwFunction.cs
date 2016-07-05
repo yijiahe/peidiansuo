@@ -22,7 +22,7 @@ public class WwwLoad
     /// <param name="tc">文本内容</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadText(WwwText tc, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadText(WwwText tc, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         LoadText(tc, MonoBehaviourAnysc.AnyscMonoBehaviour, uaing, uaend);
     }
@@ -33,12 +33,12 @@ public class WwwLoad
     /// <param name="tc">文本内容</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadText(WwwText tc, MonoBehaviour mb, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadText(WwwText tc, MonoBehaviour mb, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         mb.StartCoroutine(InvokeLoadText(tc, uaing, uaend));
     }
 
-    static IEnumerator InvokeLoadText(WwwText tc, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator InvokeLoadText(WwwText tc, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         //注册回调事件
         WwwCallBack wle = new WwwCallBack();
@@ -56,12 +56,12 @@ public class WwwLoad
 
         while (!www.isDone)// || www.progress <= 1)
         {
-            object o = (object)www.progress;
+            float o = www.progress;
             tc.Progress = www.progress;
             wle.ActiveIngEvent(false, o);
             yield return null;
         }
-        object o1 = (object)(www.progress);
+        float o1 = www.progress;
         wle.ActiveIngEvent(true, o1);
         tc.Progress = www.progress;
 
@@ -92,7 +92,7 @@ public class WwwLoad
     /// <param name="mb">MonoBehaviour</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadImage(WwwImage ic, MonoBehaviour mb, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadImage(WwwImage ic, MonoBehaviour mb, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         mb.StartCoroutine(InvokeLoadImage(ic, uaing, uaend));
     }
@@ -103,12 +103,12 @@ public class WwwLoad
     /// <param name="ic">图片内容</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadImage(WwwImage ic, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadImage(WwwImage ic, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         LoadImage(ic, MonoBehaviourAnysc.AnyscMonoBehaviour, uaing, uaend);
     }
 
-    static IEnumerator InvokeLoadImage(WwwImage ic, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator InvokeLoadImage(WwwImage ic, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         //注册回调事件
         WwwCallBack wle = new WwwCallBack();
@@ -125,12 +125,12 @@ public class WwwLoad
 
         while (!www.isDone)// || www.progress <= 1)
         {
-            object o = (object)www.progress;
+            float o = www.progress;
             ic.Progress = www.progress;
             wle.ActiveIngEvent(false, o);
             yield return null;
         }
-        object o1 = (object)(www.progress);
+        float o1 = www.progress;
         ic.Progress = www.progress;
         wle.ActiveIngEvent(true, o1);
 
@@ -170,7 +170,7 @@ public class WwwLoad
     /// <param name="bc">模型或场景文件内容</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadBundle(WwwBundle bc, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadBundle(WwwBundle bc, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         LoadBundle(bc, MonoBehaviourAnysc.AnyscMonoBehaviour, uaing, uaend, ThreadPriority.Normal);
     }
@@ -183,12 +183,12 @@ public class WwwLoad
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
     /// <param name="threadPriority">优先级别</param>
-    public static void LoadBundle(WwwBundle bc, MonoBehaviour mb, UnityAction<object> uaing, UnityAction<object> uaend, ThreadPriority threadPriority)
+    public static void LoadBundle(WwwBundle bc, MonoBehaviour mb, UnityAction<float> uaing, UnityAction<float> uaend, ThreadPriority threadPriority)
     {
         mb.StartCoroutine(InvokeLoadbundle(bc, uaing, uaend, threadPriority));
     }
 
-    static IEnumerator InvokeLoadbundle(WwwBundle bc, UnityAction<object> uaing, UnityAction<object> uaend, ThreadPriority threadPriority)
+    static IEnumerator InvokeLoadbundle(WwwBundle bc, UnityAction<float> uaing, UnityAction<float> uaend, ThreadPriority threadPriority)
     {
         //注册回调事件
         WwwCallBack wle = new WwwCallBack();
@@ -206,12 +206,12 @@ public class WwwLoad
 
         while (!www.isDone)// || www.progress <= 1)
         {
-            object o = (object)www.progress;
+            float o = www.progress;
             bc.Progress = www.progress;
             wle.ActiveIngEvent(false, o);
             yield return null;
         }
-        object o1 = (object)(www.progress);
+        float o1 = www.progress;
         bc.Progress = www.progress;
         wle.ActiveIngEvent(true, o1);
 
@@ -244,7 +244,7 @@ public class WwwLoad
     /// <param name="mb">MonoBehaviour</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadAudio(WwwAudio ac, MonoBehaviour mb, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadAudio(WwwAudio ac, MonoBehaviour mb, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         mb.StartCoroutine(InvokeLoadaudio(ac, uaing, uaend));
     }
@@ -255,12 +255,12 @@ public class WwwLoad
     /// <param name="ac">音频内容</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadAudio(WwwAudio ac, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadAudio(WwwAudio ac, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         LoadAudio(ac, MonoBehaviourAnysc.AnyscMonoBehaviour, uaing, uaend);
     }
 
-    static IEnumerator InvokeLoadaudio(WwwAudio ac, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator InvokeLoadaudio(WwwAudio ac, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         //注册回调事件
         WwwCallBack wle = new WwwCallBack();
@@ -278,12 +278,12 @@ public class WwwLoad
 
         while (!www.isDone)// || www.progress <= 1)
         {
-            object o = (object)www.progress;
+            float o = www.progress;
             ac.Progress = www.progress;
             wle.ActiveIngEvent(false, o);
             yield return null;
         }
-        object o1 = (object)(www.progress);
+        float o1 = www.progress;
         ac.Progress = www.progress;
         wle.ActiveIngEvent(true, o1);
 
@@ -313,7 +313,7 @@ public class WwwLoad
     /// <param name="mb">MonoBehaviour</param>
     /// <param name="uaing">加载中回调</param>
     /// <param name="uaend">加载结束回调</param>
-    public static void LoadMovie(WwwMovie mc, MonoBehaviour mb, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadMovie(WwwMovie mc, MonoBehaviour mb, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         mb.StartCoroutine(InvokeLoadmovie(mc, uaing, uaend));
     }
@@ -324,12 +324,12 @@ public class WwwLoad
     ///<param name="mc">视频内容</param>
     ///<param name="uaing">加载中回调</param>
     ///<param name="uaend">加载结束回调</param>
-    public static void LoadMovie(WwwMovie mc, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void LoadMovie(WwwMovie mc, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         LoadMovie(mc, MonoBehaviourAnysc.AnyscMonoBehaviour, uaing, uaend);
     }
 
-    static IEnumerator InvokeLoadmovie(WwwMovie mc, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator InvokeLoadmovie(WwwMovie mc, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         //注册回调事件
         WwwCallBack wle = new WwwCallBack();
@@ -346,12 +346,12 @@ public class WwwLoad
         mc.MovieContent = www.movie;
         while (!www.isDone)// || www.progress <= 1)
         {
-            object o = (object)www.progress;
+            float o = www.progress;
             mc.Progress = www.progress;
             wle.ActiveIngEvent(false, o);
             yield return null;
         }
-        object o1 = (object)(www.progress);
+        float o1 = www.progress;
         mc.Progress = www.progress;
         wle.ActiveIngEvent(true, o1);
         mc.LoadState = LoadState.LoadComplete;
@@ -380,8 +380,9 @@ public class WwwLoad
 public class WwwUpload
 {
     public static Dictionary<string, string> dictionary = new Dictionary<string, string>();
+    public static float TimeOut = 5f;
 
-    public static void Submit(WwwText wt, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void Submit(WwwText wt, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         if (wt.SourceUrl == null || wt.SourceUrl.Length < 1)
         {
@@ -391,7 +392,7 @@ public class WwwUpload
         MonoBehaviourAnysc.AnyscMonoBehaviour.StartCoroutine(SubmitToServer(wt, null, uaing, uaend));
     }
 
-    public static void Submit(WwwText wt, WWWForm wf, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void Submit(WwwText wt, WWWForm wf, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         if (wt.SourceUrl == null || wt.SourceUrl.Length < 1)
         {
@@ -401,7 +402,7 @@ public class WwwUpload
         MonoBehaviourAnysc.AnyscMonoBehaviour.StartCoroutine(SubmitToServer(wt, wf, uaing, uaend));
     }
 
-    static IEnumerator SubmitToServer(WwwText wt, WWWForm wf, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator SubmitToServer(WwwText wt, WWWForm wf, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         yield return new WaitForFixedUpdate();
         //注册回调事件
@@ -425,7 +426,7 @@ public class WwwUpload
         bool chaoshi = false;
         while (!www.isDone)// || www.progress <= 1)
         {
-            object o = (object)www.progress;
+            float o = www.progress;
             wt.Progress = www.progress;
             wle.ActiveIngEvent(false, o);
 
@@ -433,7 +434,7 @@ public class WwwUpload
             TimeSpan ts = new TimeSpan(temptime.Ticks);
             TimeSpan ts1 = new TimeSpan(wt.LoadStartTime.Ticks);
             TimeSpan cha = ts.Subtract(ts1).Duration();
-            if (cha.TotalSeconds > 50)
+            if (cha.TotalSeconds > TimeOut)
             {
                 chaoshi = true;
                 break;
@@ -442,7 +443,7 @@ public class WwwUpload
         }
         if (!chaoshi)
         {
-            object o1 = (object)(www.progress);
+            float o1 = www.progress;
             wt.Progress = www.progress;
             wle.ActiveIngEvent(true, o1);
 
@@ -475,12 +476,12 @@ public class WwwUpload
         wle.ActiveEndEvent(true);
     }
 
-    public static void Post(WwwText wt, WWWForm wf, UnityAction<object> uaend)
+    public static void Post(WwwText wt, WWWForm wf, UnityAction<float> uaend)
     {
         Post(wt, wf, null, uaend);
     }
 
-    public static void Post(WwwText wt, WWWForm wf, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void Post(WwwText wt, WWWForm wf, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         if (wt.SourceUrl == null || wt.SourceUrl.Length < 1)
         {
@@ -490,7 +491,7 @@ public class WwwUpload
         MonoBehaviourAnysc.AnyscMonoBehaviour.StartCoroutine(UpLoad(wt, wf, uaing, uaend));
     }
 
-    public static void Get(WwwText wt, UnityAction<object> uaing, UnityAction<object> uaend)
+    public static void Get(WwwText wt, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         if (wt.SourceUrl == null || wt.SourceUrl.Length < 1)
         {
@@ -500,12 +501,12 @@ public class WwwUpload
         MonoBehaviourAnysc.AnyscMonoBehaviour.StartCoroutine(UpLoad(wt, null, uaing, uaend));
     }
 
-    public static void PostImage(WwwText wt, WWWForm wf, UnityAction<object> uaend)
+    public static void PostImage(WwwText wt, WWWForm wf, UnityAction<float> uaend)
     {
         MonoBehaviourAnysc.AnyscMonoBehaviour.StartCoroutine(UpLoadImage(wt, wf, null, uaend));
     }
 
-    static IEnumerator UpLoadImage(WwwText wt, WWWForm wf, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator UpLoadImage(WwwText wt, WWWForm wf, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         yield return new WaitForFixedUpdate();
         //注册回调事件
@@ -629,7 +630,7 @@ public class WwwUpload
         return sr.ReadToEnd();
     }
 
-    static IEnumerator UpLoad(WwwText wt, WWWForm wf, UnityAction<object> uaing, UnityAction<object> uaend)
+    static IEnumerator UpLoad(WwwText wt, WWWForm wf, UnityAction<float> uaing, UnityAction<float> uaend)
     {
         yield return new WaitForFixedUpdate();
         //注册回调事件
@@ -654,7 +655,7 @@ public class WwwUpload
         // bool chaoshi = false;
         // while (!www.isDone)// || www.progress <= 1)
         // {
-        //     object o = (object)www.progress;
+        //     float o = (float)www.progress;
         //     wt.Progress = www.progress;
         //     wle.ActiveIngEvent(false, o);
 
@@ -671,7 +672,7 @@ public class WwwUpload
         // }
         // if (!chaoshi)
         // {
-        //     object o1 = (object)(www.progress);
+        //     float o1 = (float)(www.progress);
         //     wt.Progress = www.progress;
         //     wle.ActiveIngEvent(true, o1);
 
@@ -865,4 +866,3 @@ public class MonoBehaviourAnysc
         }
     }
 }
-
