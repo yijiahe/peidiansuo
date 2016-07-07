@@ -1,0 +1,163 @@
+Initialize engine version: 5.4.0b16-HTP (8b4340e08ab1)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD Radeon R9 200 Series (ID=0x6810)
+    Vendor:   ATI
+    VRAM:     2030 MB
+Cluster Renderer Log : ARG list
+
+D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test.exe
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\Mono.Data.Sqlite.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\Mono.Data.Sqlite.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Data.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Data.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\LitJson.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\LitJson.dll into Unity Child Domain
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Drawing.dll (this message is harmless)
+Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Drawing.dll into Unity Child Domain
+- Completed reload, in  0.050 seconds
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.647856 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: a30 -> priority: 1 
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Xml.dll (this message is harmless)
+Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Transactions.dll (this message is harmless)
+Connected to db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Data Source=D:/WorkProjects/Git/yijiahe/YijiaheProject/Builds/test_Data/data/dianlisql.db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sqlQuery:INSERT INTO classify VALUES (null,'aaaa',3,5)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Disconnected from db.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Connected to db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Data Source=D:/WorkProjects/Git/yijiahe/YijiaheProject/Builds/test_Data/data/dianlisql.db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sqlQuery:UPDATE classify SET classify_name = 'bbb',classify_parent = 13,classify_pos =15 WHERE classify_id = 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Disconnected from db.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Connected to db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Data Source=D:/WorkProjects/Git/yijiahe/YijiaheProject/Builds/test_Data/data/dianlisql.db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sqlQuery:UPDATE classify SET classify_name = 'bbb',classify_parent = 13,classify_pos =15 WHERE classify_id = 4
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Disconnected from db.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Connected to db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Data Source=D:/WorkProjects/Git/yijiahe/YijiaheProject/Builds/test_Data/data/dianlisql.db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sqlQuery:SELECT classify_id,classify_name,classify_parent,classify_pos  From classify WHERE classify_parent = 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Disconnected from db.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ Classify_id:1 Classify_name:施工队 Classify_parentID:3 Classify_numpos:5
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ Classify_id:2 Classify_name:aaaa Classify_parentID:3 Classify_numpos:52
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ Classify_id:5 Classify_name:aaaa Classify_parentID:3 Classify_numpos:6
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ Classify_id:6 Classify_name:aaaa Classify_parentID:3 Classify_numpos:5
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ Classify_id:7 Classify_name:aaaa Classify_parentID:3 Classify_numpos:5
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Connected to db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Data Source=D:/WorkProjects/Git/yijiahe/YijiaheProject/Builds/test_Data/data/dianlisql.db
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+sqlQuery:SELECT classify_id,classify_name,classify_parent,classify_pos  From classify WHERE classify_id = 3
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Disconnected from db.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+ Classify_id:3 Classify_name:bbb Classify_parentID:13 Classify_numpos:15
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SqliteDbTest.OnGUI () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at SqliteDbTest.OnGUI () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+

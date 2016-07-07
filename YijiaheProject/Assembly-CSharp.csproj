@@ -45,8 +45,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\DataBase\CustomInfo.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_classify.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DianliStaticFunction.cs" />
+     <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
+     <Compile Include="Assets\Scripts\MessageBox\MessageBox.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EBehaviour.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EObject.cs" />
+     <Compile Include="Assets\Scripts\Room\Base\EObjectType.cs" />
      <Compile Include="Assets\Scripts\Room\MeshFunction\MeshCreate.cs" />
      <Compile Include="Assets\Scripts\Room\ObjectSelect\ObjectSelect.cs" />
      <Compile Include="Assets\Scripts\Room\Wall\Wall.cs" />
@@ -59,11 +67,19 @@
      <Compile Include="Assets\Scripts\WwwFun\WwwFunction.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwMemeryManage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwObject.cs" />
+     <Compile Include="Assets\SqliteDbHelper.cs" />
+     <Compile Include="Assets\SqliteDbTest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Data.Sqlite">
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
  <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>

@@ -150,7 +150,7 @@ public class WebPath
             return defaultPath + "/forestrytwo/sys/forestry/getForestryTypeContentOne";
         }
     }
-    
+
 }
 
 public class ResourcesPath
@@ -173,7 +173,7 @@ public class ResourcesPath
     /// </summary>
 #if UNITY_EDITOR
     static string defaultPath = "file:///G:/2016Project/Jurun/HuangProject/jurunProject_Huang/Builds";
-#elif UNITY_WEBPLAYER
+#elif !UNITY_EDITOR
      static string defaultPath = Application.dataPath;
 #endif
     /// <summary>

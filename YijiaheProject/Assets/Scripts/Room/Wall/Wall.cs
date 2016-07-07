@@ -15,11 +15,21 @@ public class Wall : EBehaviour
 
     public void DrawWall(WallInfo wallinfo)
     {
-        GetComponent<MeshFilter>().mesh = MeshCreate.CreateQuadMesh();
+        UpdateWall(wallinfo);
     }
 
     public void DrawWall()
     {
         DrawWall(wallInfo);
+    }
+
+    void UpdateWall(WallInfo wallinfo)
+    {
+        wallInfo = wallinfo;
+        if (wallInfo.EMeshFilter == null)
+            wallInfo.EMeshFilter = GetComponent<MeshFilter>();
+        if (wallInfo.EMeshFilter.mesh != null)
+            DestroyImmediate(wallInfo.EMeshFilter.mesh);
+        wallInfo.EMeshFilter.mesh = MeshCreate.CreateQuadMesh();
     }
 }
