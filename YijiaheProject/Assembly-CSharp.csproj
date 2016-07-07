@@ -46,11 +46,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DataBase\CustomInfo.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_classify.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_model.cs" />
      <Compile Include="Assets\Scripts\DataBase\DataInterface\SQLDataInterface.cs" />
      <Compile Include="Assets\Scripts\DataBase\DataRead\SqliteDbHelper.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_classify.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
      <Compile Include="Assets\Scripts\DataBase\SqliteDbTest.cs" />
      <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
      <Compile Include="Assets\Scripts\MessageBox\MessageBox.cs" />
@@ -76,16 +76,16 @@
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>C:/WorkProject/Git/yijiahe/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>C:/WorkProject/Git/yijiahe/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>C:/WorkProject/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>C:/WorkProject/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
