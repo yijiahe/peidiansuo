@@ -4,8 +4,10 @@ using Mono.Data.Sqlite;
 using System;
 using System.Data;
 using System.Collections.Generic;
-
-public class DianliStaticFunction
+/// <summary>
+/// 数据库数据读出　接口
+/// </summary>
+public class SQLDataInterface
 {
 
     /// <summary>
@@ -40,7 +42,7 @@ public class DianliStaticFunction
     /// <summary>
     /// 分类修改
     /// </summary>
-    public static void updateClassifyInfo(DataCell_classify dataCell_calssify)
+    public static void UpdateClassifyInfo(DataCell_classify dataCell_calssify)
     {
         SqliteDbHelper db;
         db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
@@ -139,7 +141,7 @@ public class DianliStaticFunction
     /// <summary>
     /// 元件模型修改
     /// </summary>
-    public static void updateModelInfo(DataCell_model dataCell_model)
+    public static void UpdateModelInfo(DataCell_model dataCell_model)
     {
         SqliteDbHelper db;
         db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);

@@ -21,7 +21,7 @@ public class SqliteDbTest : MonoBehaviour
             data.Classify_name = "aaaa";
             data.Classify_numpos = 5;
             data.Classify_parentID = 3;
-            DianliStaticFunction.AddClassifyInfo(data);
+            SQLDataInterface.AddClassifyInfo(data);
         }
 
         if (GUILayout.Button("update data"))
@@ -31,13 +31,13 @@ public class SqliteDbTest : MonoBehaviour
             data.Classify_numpos = 15;
             data.Classify_parentID = 13;
             data.Classify_id = 4;
-            DianliStaticFunction.updateClassifyInfo(data);
+            SQLDataInterface.UpdateClassifyInfo(data);
         }
 
         if (GUILayout.Button("search database From ParentID"))
         {
             int id = 3;
-            List<DataCell_classify> dataList = DianliStaticFunction.SelectClassifyListInfo(id);
+            List<DataCell_classify> dataList = SQLDataInterface.SelectClassifyListInfo(id);
             for (int i = 0; i < dataList.Count; i++)
                 Debug.Log(" Classify_id:" + dataList[i].Classify_id + " Classify_name:" + dataList[i].Classify_name + " Classify_parentID:" + dataList[i].Classify_parentID + " Classify_numpos:" + dataList[i].Classify_numpos + "\n");
         }
@@ -45,7 +45,7 @@ public class SqliteDbTest : MonoBehaviour
         if (GUILayout.Button("search database From ClassifyID"))
         {
             int id = 3;
-            DataCell_classify data = DianliStaticFunction.SelectClassifyInfo(id);
+            DataCell_classify data = SQLDataInterface.SelectClassifyInfo(id);
 
             Debug.Log(" Classify_id:" + data.Classify_id + " Classify_name:" + data.Classify_name + " Classify_parentID:" + data.Classify_parentID + " Classify_numpos:" + data.Classify_numpos + "\n");
         }

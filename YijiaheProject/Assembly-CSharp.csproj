@@ -46,10 +46,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DataBase\CustomInfo.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_classify.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DianliStaticFunction.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_classify.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_model.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataInterface\SQLDataInterface.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataRead\SqliteDbHelper.cs" />
+     <Compile Include="Assets\Scripts\DataBase\SqliteDbTest.cs" />
      <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
      <Compile Include="Assets\Scripts\MessageBox\MessageBox.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EBehaviour.cs" />
@@ -67,8 +69,6 @@
      <Compile Include="Assets\Scripts\WwwFun\WwwFunction.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwMemeryManage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwObject.cs" />
-     <Compile Include="Assets\SqliteDbHelper.cs" />
-     <Compile Include="Assets\SqliteDbTest.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/3DEditor.unity
+- path: Assets/dianli.unity
   isLoaded: 1
   isActive: 1

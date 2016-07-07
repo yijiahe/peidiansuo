@@ -38,7 +38,7 @@ public class DataCell_classify :DataCell
 
     private int classify_parentID;
     /// <summary>
-    ///分类ID
+    ///分类上级ID
     /// </summary>
     public int Classify_parentID
     {
