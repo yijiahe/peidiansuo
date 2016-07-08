@@ -92,21 +92,21 @@ public class SQLDataInterface
     }
 
 
-   /// <summary>
-   ///  <summary>
-   /// 修改分类名称
-   /// </summary>
-   /// <param name="classify_currentname">当前分类名称</param>
-   /// <param name="classify_targetname">修改后分类名称</param>
-   /// <returns></returns>
-    public static bool UpdateClassifyInfo(string  classify_currentname,string classify_targetname)
+    /// <summary>
+    ///  <summary>
+    /// 修改分类名称
+    /// </summary>
+    /// <param name="classify_currentname">当前分类名称</param>
+    /// <param name="classify_targetname">修改后分类名称</param>
+    /// <returns></returns>
+    public static bool UpdateClassifyInfo(string classify_currentname, string classify_targetname)
     {
         try
         {
             SqliteDbHelper db;
             db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
-             string querySelect = "SELECT * " + " From " + SQLInfo.classify_table;
-             querySelect += " WHERE " + "classify_name = " + classify_targetname;
+            string querySelect = "SELECT * " + " From " + SQLInfo.classify_table;
+            querySelect += " WHERE " + "classify_name = " + classify_targetname;
             SqliteDataReader sqlData = db.ExecuteQuery(querySelect);
             if (sqlData.HasRows)
             {
@@ -298,7 +298,7 @@ public class SQLDataInterface
         db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
         List<DataCell_model> datamodelyList = new List<DataCell_model>();
         string query = "SELECT * " + " From " + SQLInfo.model_table;
-        query += " WHERE " + "model_classify_name = " + model_classify_name;
+        query += " WHERE " + "model_classify_name = '" + model_classify_name + "'";
         SqliteDataReader sqlData = db.ExecuteQuery(query);
         while (sqlData.Read())
         {
@@ -310,7 +310,7 @@ public class SQLDataInterface
             datamode.Modle_ThumbnailAddress = sqlData.GetString(sqlData.GetOrdinal("modle_ThumbnailAddress"));
             datamode.Model_Introduction = sqlData.GetString(sqlData.GetOrdinal("model_Introduction"));
             datamode.Model_classify_name = sqlData.GetString(sqlData.GetOrdinal("model_classify_name"));
-            datamode.Model_type = sqlData.GetString(sqlData.GetOrdinal("model_type"));
+            //datamode.Model_type = sqlData.GetString(sqlData.GetOrdinal("model_type"));
             datamodelyList.Add(datamode);
 
         }
@@ -399,7 +399,7 @@ public class SQLDataInterface
     {
         SqliteDbHelper db;
         db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
-      
+
         string query = "Delete  From" + SQLInfo.model_table;
         query += " WHERE  " + "model_num = " + mode_num;
         db.ExecuteQuery(query);

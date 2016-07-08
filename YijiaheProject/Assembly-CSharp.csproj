@@ -38,23 +38,22 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DataBase\CustomInfo.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_classify.cs" />
+     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_model.cs" />
      <Compile Include="Assets\Scripts\DataBase\DataInterface\SQLDataInterface.cs" />
      <Compile Include="Assets\Scripts\DataBase\DataRead\SqliteDbHelper.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_classify.cs" />
-     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
-     <Compile Include="Assets\Scripts\DataBase\FileHelper.cs" />
      <Compile Include="Assets\Scripts\DataBase\SqliteDbTest.cs" />
-     <Compile Include="Assets\Scripts\File\File.cs" />
      <Compile Include="Assets\Scripts\File\FileFrom.cs" />
+     <Compile Include="Assets\Scripts\File\FileHelper.cs" />
      <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EBehaviour.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EObject.cs" />
@@ -67,7 +66,11 @@
      <Compile Include="Assets\Scripts\UI\Interface\Page.cs" />
      <Compile Include="Assets\Scripts\UI\MessageBox\MessageBox.cs" />
      <Compile Include="Assets\Scripts\UI\ResourcesPanel\ClassifyEditorPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ClassifyScrollView\ClassifyItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ClassifyScrollView\ClasssifyScrollView.cs" />
      <Compile Include="Assets\Scripts\UI\ResourcesPanel\ElementsEditorPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ElementsScrollView\ElementsItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ElementsScrollView\ElementsScrollView.cs" />
      <Compile Include="Assets\Scripts\UI\ResourcesPanel\ResourcesPanel.cs" />
      <Compile Include="Assets\Scripts\UI\ScrollView\BaseScript\ScrollItem.cs" />
      <Compile Include="Assets\Scripts\UI\ScrollView\BaseScript\ScrollView.cs" />
@@ -84,18 +87,12 @@
      <Compile Include="Assets\Scripts\WwwFun\WwwMemeryManage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwObject.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
-<<<<<<< HEAD
- <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
- </Reference>
- <Reference Include="System.Data">
- <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
-=======
  <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/DataBase/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
@@ -103,13 +100,12 @@
  </Reference>
  <Reference Include="System.Windows.Forms">
  <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/File/Plugins/System.Windows.Forms.dll</HintPath>
->>>>>>> origin/master
  </Reference>
  <Reference Include="LitJson">
- <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

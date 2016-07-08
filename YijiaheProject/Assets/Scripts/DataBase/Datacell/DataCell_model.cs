@@ -87,8 +87,6 @@ public class DataCell_model : DataCell
         set { model_type = value; }
     }
 
-   
-
     public DataCell_model()
     {
         Model_num = "";

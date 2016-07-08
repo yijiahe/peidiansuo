@@ -12,7 +12,7 @@ public class ScrollButtonView : ScrollView<ScrollButtonItemInfo>
     public override void Start()
     {
         base.Start();
-        CreateScrollView();
+        //CreateScrollView();
     }
 
     public void CreateScrollView()

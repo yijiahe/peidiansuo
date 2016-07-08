@@ -27,16 +27,16 @@ Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\M
 Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\LitJson.dll into Unity Child Domain
 Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Drawing.dll (this message is harmless)
 Loading D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Drawing.dll into Unity Child Domain
-- Completed reload, in  0.048 seconds
+- Completed reload, in  0.051 seconds
 Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\WorkProjects\Git\yijiahe\YijiaheProject\Builds\test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.620177 ms
+UnloadTime: 0.650035 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2acc -> priority: 1 
+  Thread -> id: eac -> priority: 1 
 
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
