@@ -78,6 +78,17 @@ public class DataCell_model : DataCell
         set { model_classify_name = value; }
     }
 
+
+    private string model_type;
+
+    public string Model_type
+    {
+        get { return model_type; }
+        set { model_type = value; }
+    }
+
+   
+
     public DataCell_model()
     {
         Model_num = "";
@@ -86,6 +97,6 @@ public class DataCell_model : DataCell
         modle_ThumbnailAddress = "";
         model_Introduction = "";
         model_classify_name = "";
+        model_type = "";
     }
-
 }

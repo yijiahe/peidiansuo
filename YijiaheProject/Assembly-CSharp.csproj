@@ -38,19 +38,20 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\DataBase\CustomInfo.cs" />
-     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell.cs" />
-     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_classify.cs" />
-     <Compile Include="Assets\Scripts\DataBase\DataCell\DataCell_model.cs" />
      <Compile Include="Assets\Scripts\DataBase\DataInterface\SQLDataInterface.cs" />
      <Compile Include="Assets\Scripts\DataBase\DataRead\SqliteDbHelper.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_classify.cs" />
+     <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
+     <Compile Include="Assets\Scripts\DataBase\FileHelper.cs" />
      <Compile Include="Assets\Scripts\DataBase\SqliteDbTest.cs" />
      <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
      <Compile Include="Assets\Scripts\MessageBox\MessageBox.cs" />
@@ -70,22 +71,22 @@
      <Compile Include="Assets\Scripts\WwwFun\WwwMemeryManage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\WwwObject.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
