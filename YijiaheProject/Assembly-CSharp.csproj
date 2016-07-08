@@ -53,8 +53,9 @@
      <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
      <Compile Include="Assets\Scripts\DataBase\FileHelper.cs" />
      <Compile Include="Assets\Scripts\DataBase\SqliteDbTest.cs" />
+     <Compile Include="Assets\Scripts\File\File.cs" />
+     <Compile Include="Assets\Scripts\File\FileFrom.cs" />
      <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
-     <Compile Include="Assets\Scripts\MessageBox\MessageBox.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EBehaviour.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EObject.cs" />
      <Compile Include="Assets\Scripts\Room\Base\EObjectType.cs" />
@@ -62,6 +63,18 @@
      <Compile Include="Assets\Scripts\Room\ObjectSelect\ObjectSelect.cs" />
      <Compile Include="Assets\Scripts\Room\Wall\Wall.cs" />
      <Compile Include="Assets\Scripts\Room\Wall\WallInfo.cs" />
+     <Compile Include="Assets\Scripts\UI\Interface\IPage.cs" />
+     <Compile Include="Assets\Scripts\UI\Interface\Page.cs" />
+     <Compile Include="Assets\Scripts\UI\MessageBox\MessageBox.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ClassifyEditorPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ElementsEditorPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\ResourcesPanel\ResourcesPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\ScrollView\BaseScript\ScrollItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ScrollView\BaseScript\ScrollView.cs" />
+     <Compile Include="Assets\Scripts\UI\ScrollView\ScrollButtonView\ScrollButtonItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ScrollView\ScrollButtonView\ScrollButtonView.cs" />
+     <Compile Include="Assets\Scripts\UI\ScrollView\ScrollToggleView\ScrollToggleItem.cs" />
+     <Compile Include="Assets\Scripts\UI\ScrollView\ScrollToggleView\ScrollToggleView.cs" />
      <Compile Include="Assets\Scripts\WwwFun\AnalysisPage.cs" />
      <Compile Include="Assets\Scripts\WwwFun\CallWebAction.cs" />
      <Compile Include="Assets\Scripts\WwwFun\JsonAnalysis.cs" />
@@ -77,10 +90,20 @@
  <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
+<<<<<<< HEAD
  <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
  <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Plugins/System.Data.dll</HintPath>
+=======
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/DataBase/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/DataBase/Plugins/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Windows.Forms">
+ <HintPath>D:/WorkProjects/Git/yijiahe/YijiaheProject/Assets/Scripts/File/Plugins/System.Windows.Forms.dll</HintPath>
+>>>>>>> origin/master
  </Reference>
  <Reference Include="LitJson">
  <HintPath>E:/myselfWork/Git/yijiaheproject/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
