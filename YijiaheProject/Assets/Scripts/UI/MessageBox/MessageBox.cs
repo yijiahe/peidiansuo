@@ -29,11 +29,27 @@ public class MessageBox : MonoBehaviour
     void Awake()
     {
         instance = this;
+        messageBoxContent.warning.SetActive(false);
+        messageBoxContent.progressBar.gameObject.SetActive(false);
+        messageBoxContent.button_OK.onClick.AddListener(OnOkClick);
+        messageBoxContent.button_Cancel.onClick.AddListener(OnCancelClick);
     }
 
     void Start()
     {
 
+    }
+
+    private void OnOkClick()
+    {
+        messageBoxContent.messageEvent.Invoke(MessageResult.OK);
+        Display(false);
+    }
+
+    private void OnCancelClick()
+    {
+        messageBoxContent.messageEvent.Invoke(MessageResult.Cancel);
+        Display(false);
     }
 
     /// <summary>
@@ -42,7 +58,17 @@ public class MessageBox : MonoBehaviour
     /// <param name="state"></param>
     public static void Display(bool state)
     {
+        instance.messageBoxContent.boxContent.SetActive(state);
+        if (state)
+        {
 
+        }
+        else
+        {
+            instance.messageBoxContent.warning.SetActive(false);
+            instance.messageBoxContent.progressBar.gameObject.SetActive(false);
+            instance.messageBoxContent.messageEvent.RemoveAllListeners();
+        }
     }
 
     /// <summary>
@@ -51,7 +77,7 @@ public class MessageBox : MonoBehaviour
     /// <param name="message"></param>
     public static void Display(string message)
     {
-
+        Display("提示", message);
     }
 
     /// <summary>
@@ -59,9 +85,9 @@ public class MessageBox : MonoBehaviour
     /// </summary>
     /// <param name="title"></param>
     /// <param name="message"></param>
-    public static void Dispaly(string title, string message)
+    public static void Display(string title, string message)
     {
-
+        Display(title, message, new string[] { "确定", "取消" });
     }
 
     /// <summary>
@@ -70,9 +96,9 @@ public class MessageBox : MonoBehaviour
     /// <param name="title"></param>
     /// <param name="message"></param>
     /// <param name="buttonname"></param>
-    public static void Dispaly(string title, string message, string[] buttonname)
+    public static void Display(string title, string message, string[] buttonname)
     {
-
+        Display(title, message, buttonname, null);
     }
 
     /// <summary>
@@ -82,7 +108,7 @@ public class MessageBox : MonoBehaviour
     /// <param name="callback"></param>
     public static void Display(string message, UnityAction<MessageResult> callback)
     {
-
+        Display("提示", message, callback);
     }
 
     /// <summary>
@@ -91,20 +117,44 @@ public class MessageBox : MonoBehaviour
     /// <param name="title"></param>
     /// <param name="message"></param>
     /// <param name="callback"></param>
-    public static void Dispaly(string title, string message, UnityAction<MessageResult> callback)
+    public static void Display(string title, string message, UnityAction<MessageResult> callback)
     {
-
+        Display(title, message, new string[] { "确定", "取消" }, callback);
     }
 
     /// <summary>
-    /// 
+    /// 显示带标题的带按钮支持回调的消息提示框
     /// </summary>
     /// <param name="title"></param>
     /// <param name="message"></param>
     /// <param name="buttonname"></param>
     /// <param name="callback"></param>
-    public static void Dispaly(string title, string message, string[] buttonname, UnityAction<MessageResult> callback)
+    public static void Display(string title, string message, string[] buttonname, UnityAction<MessageResult> callback)
     {
+        Display(true);
+
+        instance.messageBoxContent.title.text = title;
+        instance.messageBoxContent.Message.text = message;
+
+        instance.messageBoxContent.button_OK.gameObject.SetActive(false);
+        instance.messageBoxContent.button_Cancel.gameObject.SetActive(false);
+
+        if (buttonname != null)
+        {
+            if (buttonname.Length > 0)
+            {
+                instance.messageBoxContent.buttonOK_Content.text = buttonname[0];
+                instance.messageBoxContent.button_OK.gameObject.SetActive(true);
+            }
+            if (buttonname.Length > 1)
+            {
+                instance.messageBoxContent.buttonCancel_Content.text = buttonname[1];
+                instance.messageBoxContent.button_Cancel.gameObject.SetActive(true);
+            }
+        }
+
+        if (callback != null)
+            instance.messageBoxContent.messageEvent.AddListener(callback);
 
     }
 
@@ -116,7 +166,24 @@ public class MessageBox : MonoBehaviour
     /// <param name="callback"></param>
     public static void Display(string message, float delaytime, UnityAction<MessageResult> callback)
     {
+        Display("提示", message, null, callback);
+        instance.WaitForEnd(delaytime);
+    }
 
+    float waitingTime = 0;
+
+    void WaitForEnd(float time)
+    {
+        waitingTime = time;
+        StartCoroutine("WaitForEndAnysc");
+    }
+
+    IEnumerator WaitForEndAnysc()
+    {
+        yield return new WaitForSeconds(waitingTime);
+        messageBoxContent.messageEvent.Invoke(MessageResult.None);
+
+        Display(false);
     }
 
     /// <summary>
@@ -126,7 +193,7 @@ public class MessageBox : MonoBehaviour
     /// <param name="progress"></param>
     public static void Display(string message, float progress)
     {
-
+        Display("加载中", message, progress);
     }
 
     /// <summary>
@@ -137,7 +204,9 @@ public class MessageBox : MonoBehaviour
     /// <param name="progress"></param>
     public static void Display(string title, string message, float progress)
     {
-
+        Display(title, message, null, null);
+        instance.messageBoxContent.progressBar.gameObject.SetActive(true);
+        instance.messageBoxContent.progressBar.value = progress;
     }
 }
 
@@ -145,15 +214,42 @@ public class MessageBox : MonoBehaviour
 public class MessageBoxContent
 {
     public GameObject boxContent;
+
     public GameObject warning;
+
     public Slider progressBar;
+
     public ScrollRect scrollRect;
+
     public Text title;
-    public Text content;
+
+    [SerializeField]
+    Text message;
+
+    /// <summary>
+    /// 消息内容
+    /// </summary>
+    public Text Message
+    {
+        set
+        {
+            message = value;
+        }
+        get
+        {
+            return message;
+        }
+    }
+
     public Button button_OK;
+
     public Text buttonOK_Content;
+
     public Button button_Cancel;
+
     public Text buttonCancel_Content;
+
+    public MessageEvent messageEvent = new MessageEvent();
 }
 
 public enum MessageResult
@@ -163,4 +259,5 @@ public enum MessageResult
     Cancel,
 }
 
+[System.Serializable]
 public class MessageEvent : UnityEvent<MessageResult> { };

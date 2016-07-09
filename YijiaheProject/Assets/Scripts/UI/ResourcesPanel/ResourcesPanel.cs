@@ -40,8 +40,32 @@ public class ResourcesPanel : Page
         classifyOnePanel.OnScrollValueChanged.AddListener(OnClassifyOneValueChanges);
         //绑定一级菜单事件
         classifyTwoPanel.OnScrollValueChanged.AddListener(OnClassifyTwoValueChanges);
+        //绑定元件出发事件
+        elementsScrollView.OnScrollValueChanged.AddListener(OnElementValueCahnged);
+        //绑定添加一级分类按钮
+        button_AddClassifyOne.onClick.AddListener(OnClassifyOneClick);
+        //绑定添加二级分类按钮
+        button_AddClassifyTwo.onClick.AddListener(OnClassifyTwoClick);
 
         UpdateClassifyOnePanel();
+    }
+
+    /// <summary>
+    /// 添加一级分类
+    /// </summary>
+    private void OnClassifyOneClick()
+    {
+        classifyEditorPanel.SetParentID("0");
+    }
+
+    /// <summary>
+    /// 添加二级分类
+    /// </summary>
+    private void OnClassifyTwoClick()
+    {
+        if (classifyOnePanel.Value < 0)
+            return;
+        classifyEditorPanel.SetParentID(classifyOnePanel.CassifyContent[classifyOnePanel.Value].ParentID);
     }
 
     public override void Display(bool state)
@@ -110,6 +134,21 @@ public class ResourcesPanel : Page
         classifyTwoPanel.CreateScrollView();
     }
 
+    /// <summary>
+    /// 元件面板触发
+    /// </summary>
+    /// <param name="arg0"></param>
+    private void OnElementValueCahnged(int arg0)
+    {
+        if (arg0 < 0 || classifyTwoPanel.Value < 0)
+            return;
+        elementsEditorPanel.AddElement(classifyTwoPanel.CassifyContent[classifyTwoPanel.Value].Name);
+    }
+
+    /// <summary>
+    /// 更新元件面板
+    /// </summary>
+    /// <param name="classifyname"></param>
     void UpdateElementsPanel(string classifyname)
     {
         elementsScrollView.ElementsContent.Clear();

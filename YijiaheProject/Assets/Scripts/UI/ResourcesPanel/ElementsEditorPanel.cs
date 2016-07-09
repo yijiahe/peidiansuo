@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ElementsEditorPanel : Page
@@ -10,8 +11,12 @@ public class ElementsEditorPanel : Page
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddElement(string classifyname)
+    {
+
+    }
+
+    public void DisplayElement()
     {
 
     }
