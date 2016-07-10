@@ -2,6 +2,7 @@
 using System.Collections;
 using Mono.Data.Sqlite;
 using System;
+using System.IO;
 using System.Data;
 using System.Collections.Generic;
 /// <summary>
@@ -18,29 +19,39 @@ public class SQLDataInterface
 
         try
         {
+            DataCell_classify dataclassify = dataCell_calssify;
             SqliteDbHelper db;
             db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
-            DataCell_classify dataclassify = dataCell_calssify;
+
             string querySelect = "SELECT * " + " From " + SQLInfo.classify_table;
-            querySelect += " WHERE " + "classify_name = " + dataclassify.Classify_name;
+            querySelect += " WHERE " + "classify_name = '" + dataclassify.Classify_name + "'";
             SqliteDataReader sqlData = db.ExecuteQuery(querySelect);
 
-            if (!sqlData.HasRows)
+            if (sqlData.HasRows)
             {
                 //**存在名称一样的**//
                 return false;
             }
-            else
+            if (sqlData != null)
             {
-                string[] aa = new string[] { null, dataclassify.Classify_name, dataclassify.Classify_parentID.ToString(), dataclassify.Classify_numpos.ToString() };
-                // db.InsertClassifyInto(SQLInfo.classify_table, dataclassify.Classify_name, dataclassify.Classify_parentID, dataclassify.Classify_numpos);
-                string query = "INSERT INTO " + SQLInfo.classify_table + " VALUES (" + "null" + "," + "'" + dataclassify.Classify_name + "'" + "," + dataclassify.Classify_parentID + "," + dataclassify.Classify_numpos;
-                query += ")";
-
-                db.ExecuteQuery(query);
-                db.CloseSqlConnection();
-                return true;
+                sqlData.Dispose();
             }
+            sqlData = null;
+            db.CloseSqlConnection();
+
+
+
+            SqliteDbHelper db1;
+            db1 = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
+            // string[] aa = new string[] { null, dataclassify.Classify_name, dataclassify.Classify_parentID.ToString(), dataclassify.Classify_numpos.ToString() };
+            // db.InsertClassifyInto(SQLInfo.classify_table, dataclassify.Classify_name, dataclassify.Classify_parentID, dataclassify.Classify_numpos);
+            string query = "INSERT INTO " + SQLInfo.classify_table + " VALUES (" + "null" + "," + "'" + dataclassify.Classify_name + "'" + "," + dataclassify.Classify_parentID + "," + dataclassify.Classify_numpos;
+            query += ")";
+
+            db1.ExecuteQuery(query);
+            db1.CloseSqlConnection();
+            return true;
+
         }
         catch (Exception e)
         {
@@ -64,21 +75,27 @@ public class SQLDataInterface
             db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
             DataCell_classify dataclassify = dataCell_calssify;
             string querySelect = "SELECT * " + " From " + SQLInfo.classify_table;
-            querySelect += " WHERE " + "classify_name = " + dataclassify.Classify_name;
+            querySelect += " WHERE " + "classify_name = '" + dataclassify.Classify_name + "'";
             SqliteDataReader sqlData = db.ExecuteQuery(querySelect);
             if (sqlData.HasRows)
             {
                 return false;
             }
-            else
+            if (sqlData != null)
             {
-                //  db.UpdateInto(SQLInfo.classify_table, dataclassify.Classify_name, dataclassify.Classify_parentID, dataclassify.Classify_numpos)
-                string query = "UPDATE " + SQLInfo.classify_table + " SET " + "classify_name = " + "'" + dataclassify.Classify_name + "'" + "," + "classify_parent = " + dataclassify.Classify_parentID + "," + "classify_pos =" + dataclassify.Classify_numpos;
-                query += " WHERE " + "classify_id = " + dataclassify.Classify_id;
-                db.ExecuteQuery(query);
-                db.CloseSqlConnection();
-                return true;
+                sqlData.Dispose();
             }
+            sqlData = null;
+            db.CloseSqlConnection();
+            SqliteDbHelper db2;
+            db2 = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
+            //  db.UpdateInto(SQLInfo.classify_table, dataclassify.Classify_name, dataclassify.Classify_parentID, dataclassify.Classify_numpos)
+            string query = "UPDATE " + SQLInfo.classify_table + " SET " + "classify_name = " + "'" + dataclassify.Classify_name + "'" + "," + "classify_parent = " + dataclassify.Classify_parentID + "," + "classify_pos =" + dataclassify.Classify_numpos;
+            query += " WHERE " + "classify_id = " + dataclassify.Classify_id;
+            db2.ExecuteQuery(query);
+            db2.CloseSqlConnection();
+            return true;
+
         }
         catch (Exception e)
         {
@@ -113,15 +130,21 @@ public class SQLDataInterface
                 //**该名称已经存在**//
                 return false;
             }
-            else
+            if (sqlData != null)
             {
-                //  db.UpdateInto(SQLInfo.classify_table, dataclassify.Classify_name, dataclassify.Classify_parentID, dataclassify.Classify_numpos)
-                string query = "UPDATE " + SQLInfo.classify_table + " SET " + "classify_name = " + classify_targetname;
-                query += " WHERE " + "classify_name = " + classify_currentname;
-                db.ExecuteQuery(query);
-                db.CloseSqlConnection();
-                return true;
+                sqlData.Dispose();
             }
+            sqlData = null;
+            db.CloseSqlConnection();
+            SqliteDbHelper db2;
+            db2 = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
+
+            string query = "UPDATE " + SQLInfo.classify_table + " SET " + "classify_name = '" + classify_targetname + "'";
+            query += " WHERE " + "classify_name = '" + classify_currentname + "'";
+            db2.ExecuteQuery(query);
+            db2.CloseSqlConnection();
+            return true;
+
         }
         catch (Exception e)
         {
@@ -205,22 +228,49 @@ public class SQLDataInterface
             db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
             DataCell_model datamodel = dataCell_model;
             string querySelect = "SELECT * " + " From " + SQLInfo.model_table;
-            querySelect += " WHERE " + "model_num = " + datamodel.Model_num;
+            querySelect += " WHERE " + "model_num = '" + datamodel.Model_num + "'";
             SqliteDataReader sqlData = db.ExecuteQuery(querySelect);
-
-            if (!sqlData.HasRows)
+            // 有 true  没有 false
+            if (sqlData.HasRows)
             {
                 //**存在名称一样的**//
+                Debug.Log("该名称已经存在" + sqlData.HasRows);
                 return false;
             }
-            else
+            if (sqlData != null)
             {
-                string query = "INSERT INTO " + SQLInfo.model_table + " VALUES (" + "null" + "," + datamodel.Model_num + "," + datamodel.Model_name + "," + datamodel.Model_address;
-                query += "," + datamodel.Modle_ThumbnailAddress + "," + datamodel.Model_Introduction + "," + datamodel.Model_classify_name + datamodel.Model_type + ")";
-                db.ExecuteQuery(query);
-                db.CloseSqlConnection();
-                return true;
+                sqlData.Dispose();
             }
+            sqlData = null;
+            db.CloseSqlConnection();
+
+
+
+            if (datamodel.Model_address != "")
+            {
+                Debug.Log("dataCell_model.Model_address:" + dataCell_model.Model_address);
+                string targetPath = Application.dataPath + SQLInfo.Model_path;
+
+                if (datamodel.Model_address != targetPath)
+                    if (!FileHelper.CopyDir(datamodel.Model_address, targetPath))
+                        return false;
+            }
+            if (datamodel.Modle_ThumbnailAddress != "")
+            {
+                Debug.Log("dataCell_model.Modle_ThumbnailAddress:" + dataCell_model.Modle_ThumbnailAddress + " Path:" + Path.GetFileName(dataCell_model.Modle_ThumbnailAddress));
+                string targetPath = Application.dataPath + SQLInfo.Texture_path;
+                if (datamodel.Modle_ThumbnailAddress != targetPath)
+                    if (!FileHelper.CopyDir(datamodel.Modle_ThumbnailAddress, targetPath))
+                        return false;
+            }
+            SqliteDbHelper db1;
+            db1 = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
+            string query = "INSERT INTO " + SQLInfo.model_table + " VALUES (" + "null" + ",'" + datamodel.Model_num + "','" + datamodel.Model_name + "','" + datamodel.Model_address;
+            query += "','" + datamodel.Modle_ThumbnailAddress + "','" + datamodel.Model_Introduction + "','" + datamodel.Model_classify_name + "','" + datamodel.Model_type + "')";
+            db1.ExecuteQuery(query);
+            db1.CloseSqlConnection();
+            return true;
+
         }
         catch (Exception e)
         {
@@ -256,7 +306,7 @@ public class SQLDataInterface
             db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
             DataCell_model datamodel = dataCell_model;
             string querySelect = "SELECT * " + " From " + SQLInfo.model_table;
-            querySelect += " WHERE " + "model_num = " + datamodel.Model_num;
+            querySelect += " WHERE " + "model_num = '" + datamodel.Model_num + "'";
             SqliteDataReader sqlData = db.ExecuteQuery(querySelect);
 
             if (!sqlData.HasRows)
@@ -264,15 +314,40 @@ public class SQLDataInterface
                 //**存在名称一样的**//
                 return false;
             }
-            else
+            if (sqlData != null)
             {
-                string query = "UPDATE " + SQLInfo.model_table + " SET " + "model_num = " + datamodel.Model_num + "," + "model_name = " + datamodel.Model_name + "," + "model_address = " + datamodel.Model_address;
-                query += "," + "modle_ThumbnailAddress = " + datamodel.Modle_ThumbnailAddress + "," + "model_Introduction = " + datamodel.Model_Introduction + "," + "model_classify_name = " + datamodel.Model_classify_name + "model_type = " + datamodel.Model_type;
-                query += " WHERE " + "model_id = " + datamodel.Model_id;
-                db.ExecuteQuery(query);
-                db.CloseSqlConnection();
-                return true;
+                sqlData.Dispose();
             }
+            sqlData = null;
+            db.CloseSqlConnection();
+
+            SqliteDbHelper db1;
+            db1 = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
+            string query = "UPDATE " + SQLInfo.model_table + " SET " + "model_num = '" + datamodel.Model_num + "'," + "model_name = '" + datamodel.Model_name + "'," + "model_address = '" + datamodel.Model_address;
+            query += "'," + "modle_ThumbnailAddress = '" + datamodel.Modle_ThumbnailAddress + "'," + "model_Introduction = '" + datamodel.Model_Introduction + "'," + "model_classify_name = '" + datamodel.Model_classify_name + "' + " + " model_type = '" + datamodel.Model_type + "'";
+            query += " WHERE " + "model_id = " + datamodel.Model_id;
+            db1.ExecuteQuery(query);
+
+            if (datamodel.Model_address != "")
+            {
+                Debug.Log("dataCell_model.Model_address:" + dataCell_model.Model_address);
+                string targetPath = Application.dataPath + SQLInfo.Model_path;
+
+                if (datamodel.Model_address != targetPath)
+                    if (!FileHelper.CopyDir(datamodel.Model_address, targetPath))
+                        return false;
+            }
+            if (datamodel.Modle_ThumbnailAddress != "")
+            {
+                Debug.Log("dataCell_model.Modle_ThumbnailAddress:" + dataCell_model.Modle_ThumbnailAddress + " Path:" + Path.GetFileName(dataCell_model.Modle_ThumbnailAddress));
+                string targetPath = Application.dataPath + SQLInfo.Texture_path;
+                if (datamodel.Modle_ThumbnailAddress != targetPath)
+                    if (!FileHelper.CopyDir(datamodel.Modle_ThumbnailAddress, targetPath))
+                        return false;
+            }
+            db.CloseSqlConnection();
+            return true;
+
         }
         catch (Exception e)
         {
@@ -358,7 +433,7 @@ public class SQLDataInterface
         SqliteDbHelper db;
         db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
         string query = "SELECT * " + " From " + SQLInfo.model_table;
-        query += " WHERE " + "model_num = " + model_num;
+        query += " WHERE " + "model_num = '" + model_num + "'";
         DataCell_model datamode = new DataCell_model();
         SqliteDataReader sqlData = db.ExecuteQuery(query);
         while (sqlData.Read())
@@ -401,7 +476,7 @@ public class SQLDataInterface
         db = new SqliteDbHelper("Data Source=" + Application.dataPath + SQLInfo.SQL_path);
 
         string query = "Delete  From" + SQLInfo.model_table;
-        query += " WHERE  " + "model_num = " + mode_num;
+        query += " WHERE  " + "model_num = '" + mode_num + "'";
         db.ExecuteQuery(query);
         db.CloseSqlConnection();
     }

@@ -6,7 +6,7 @@ using System.Data;
 using System.Collections.Generic;
 public class SqliteDbTest : MonoBehaviour
 {
-    SqliteDbHelper db;
+    //SqliteDbHelper db;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class SqliteDbTest : MonoBehaviour
         if (GUILayout.Button("insert data"))
         {
             DataCell_classify data = new DataCell_classify();
-            data.Classify_name = "aaaa";
+            data.Classify_name = "aaaabbbbb6666";
             data.Classify_numpos = 5;
             data.Classify_parentID = 3;
             SQLDataInterface.AddClassifyInfo(data);
@@ -50,23 +50,17 @@ public class SqliteDbTest : MonoBehaviour
             Debug.Log(" Classify_id:" + data.Classify_id + " Classify_name:" + data.Classify_name + " Classify_parentID:" + data.Classify_parentID + " Classify_numpos:" + data.Classify_numpos + "\n");
         }
 
-        if (GUILayout.Button("close database"))
+        if (GUILayout.Button("insert model data"))
         {
-            db.CloseSqlConnection();
-            Debug.Log("close table ok");
+            DataCell_model data = new DataCell_model();
+            data.Model_name = "aaaa";
+            data.Model_num = "test";
+            data.Model_classify_name = "bbb";
+            data.Modle_ThumbnailAddress = "E:/100CANON/IMG_0001.JPG";
+            data.Model_address = "E:/GitHub/Prefab.unity3d";
+            SQLDataInterface.AddModelInfo(data);
         }
-        if (GUILayout.Button("SelectAll"))
-        {
-            SqliteDataReader sqReader = db.ReadFullTable("mytable");
-            while (sqReader.Read())
-            {
-
-                Debug.Log(
-                "name=" + sqReader.GetString(sqReader.GetOrdinal("name")) +
-                "email=" + sqReader.GetString(sqReader.GetOrdinal("email"))
-                );
-            }
-        }
+       
     }
 
 }

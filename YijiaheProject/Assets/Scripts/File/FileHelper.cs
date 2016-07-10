@@ -4,19 +4,85 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using System.Collections;
+using System.Data;
 /// <summary>
 /// 使用Application.persistentDataPath方式来创建文件，读写Xml文件.
 /// 注Application.persistentDataPath末尾没有“/”符号
 /// </summary>
 public class FileHelper : MonoBehaviour
 {
+
     /// <summary>
-    /// 动态创建文件夹.
+    /// 将文件移到固定目录
     /// </summary>
-    /// <returns>The folder.</returns>
-    /// <param name="path">文件创建目录.</param>
-    /// <param name="FolderName">文件夹名(不带符号).</param>
-    public string CreateFolder(string path, string FolderName)
+    /// <param name="srcPath"></param>
+    /// <param name="targetPath"></param>
+    /// <returns></returns>
+    public static bool CopyDir(string srcPath, string targetPath)
+    {
+       // string filename = System.IO.Path.GetFileName(sourcePath);
+        try
+        {
+            // 检查目标目录是否以目录分割字符结束如果不是则添加
+            //if (targetPath[targetPath.Length - 1] != System.IO.Path.DirectorySeparatorChar)
+            //{
+            //    targetPath += System.IO.Path.DirectorySeparatorChar;
+            //}
+            // 判断目标目录是否存在如果不存在则新建
+            if (!System.IO.Directory.Exists(targetPath))
+            {
+                System.IO.Directory.CreateDirectory(targetPath);
+            }
+            Debug.Log("srcPath：" + srcPath + " targetPath: " + targetPath);
+            // 得到源目录的文件列表，该里面是包含文件以及目录路径的一个数组
+            // 如果你指向copy目标文件下面的文件而不包含目录请使用下面的方法
+            // string[] fileList = Directory.GetFiles（srcPath）；
+            System.IO.File.Copy(srcPath, targetPath + System.IO.Path.GetFileName(srcPath), true);
+
+            //string[] fileList = System.IO.Directory.GetFileSystemEntries(srcPath);
+            //// 遍历所有的文件和目录
+            //foreach (string file in fileList)
+            //{
+            //    Debug.Log("a1");
+            //    // 先当作目录处理如果存在这个目录就递归Copy该目录下面的文件
+            //    if (System.IO.Directory.Exists(file))
+            //    {
+            //        CopyDir(file, targetPath + System.IO.Path.GetFileName(file));
+            //    }
+            //    // 否则直接Copy文件
+            //    else
+            //    {
+            //        Debug.Log("a2");
+            //        //if (System.IO.File.Exists(targetPath + System.IO.Path.GetFileName(file)))
+            //        //{
+            //        //  //  System.IO.File.Copy(file, targetPath + System.IO.Path.GetFileName(file), true);
+            //        //}
+            //        //直接覆盖//
+                  
+            //       // return true;
+            //    }
+            //}
+            return true;
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.ToString());
+            return false;
+            //throw;
+            
+        }
+
+    }
+
+
+
+/// <summary>
+/// 动态创建文件夹.
+/// </summary>
+/// <returns>The folder.</returns>
+/// <param name="path">文件创建目录.</param>
+/// <param name="FolderName">文件夹名(不带符号).</param>
+public string CreateFolder(string path, string FolderName)
     {
         string FolderPath = path + FolderName;
         if (!Directory.Exists(FolderPath))
@@ -72,6 +138,7 @@ public class FileHelper : MonoBehaviour
         catch (Exception e)
         {
             //路径与名称未找到文件则直接返回空
+            Debug.Log(e.ToString());
             return null;
         }
         string line;
