@@ -53,11 +53,11 @@ public class SqliteDbTest : MonoBehaviour
         if (GUILayout.Button("insert model data"))
         {
             DataCell_model data = new DataCell_model();
-            data.Model_name = "aaaa";
-            data.Model_num = "test";
-            data.Model_classify_name = "bbb";
-            data.Modle_ThumbnailAddress = "E:/100CANON/IMG_0001.JPG";
-            data.Model_address = "E:/GitHub/Prefab.unity3d";
+            data.Model_name = "aaaa111sfsdg";
+            data.Model_num = "testsdfsssdd1";
+            data.Model_classify_name = "bbb111";
+            data.Modle_ThumbnailAddress = "E:/myselfWork/Git/IMG_0001.JPG";
+            data.Model_address = "E:/myselfWork/Git/Prefab.unity3d";
             SQLDataInterface.AddModelInfo(data);
         }
        

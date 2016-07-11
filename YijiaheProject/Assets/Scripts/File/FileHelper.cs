@@ -6,8 +6,7 @@ using UnityEngine;
 using System.Collections;
 using System.Data;
 /// <summary>
-/// 使用Application.persistentDataPath方式来创建文件，读写Xml文件.
-/// 注Application.persistentDataPath末尾没有“/”符号
+/// 文件操作
 /// </summary>
 public class FileHelper : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class FileHelper : MonoBehaviour
     /// <param name="srcPath"></param>
     /// <param name="targetPath"></param>
     /// <returns></returns>
-    public static bool CopyDir(string srcPath, string targetPath)
+    public static bool CopyDir(ref string srcPath, string targetPath)
     {
        // string filename = System.IO.Path.GetFileName(sourcePath);
         try
@@ -37,7 +36,23 @@ public class FileHelper : MonoBehaviour
             // 得到源目录的文件列表，该里面是包含文件以及目录路径的一个数组
             // 如果你指向copy目标文件下面的文件而不包含目录请使用下面的方法
             // string[] fileList = Directory.GetFiles（srcPath）；
-            System.IO.File.Copy(srcPath, targetPath + System.IO.Path.GetFileName(srcPath), true);
+         //   System.IO.File.Copy(srcPath, targetPath + System.IO.Path.GetFileName(srcPath), true);
+            if (!System.IO.File.Exists(targetPath + System.IO.Path.GetFileName(srcPath)))
+            {
+                System.IO.File.Copy(srcPath, targetPath + System.IO.Path.GetFileName(srcPath));
+                srcPath = targetPath + System.IO.Path.GetFileName(srcPath);
+            }
+            else
+            {
+                System.DateTime currentTime = new System.DateTime();
+                currentTime = System.DateTime.Now;
+                string time = currentTime.ToString("_HH_mm");
+                Debug.Log("lujing:" + targetPath + System.IO.Path.GetFileNameWithoutExtension(srcPath) +time + System.IO.Path.GetExtension(srcPath));
+                System.IO.File.Copy(srcPath, targetPath + System.IO.Path.GetFileNameWithoutExtension(srcPath) + time + System.IO.Path.GetExtension(srcPath));
+                srcPath = targetPath + System.IO.Path.GetFileNameWithoutExtension(srcPath) + time + System.IO.Path.GetExtension(srcPath);
+                Debug.Log("srcPathsrcPath:" + srcPath);
+            }
+
 
             //string[] fileList = System.IO.Directory.GetFileSystemEntries(srcPath);
             //// 遍历所有的文件和目录
