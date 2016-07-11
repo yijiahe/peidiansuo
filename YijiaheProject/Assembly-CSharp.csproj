@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_classify.cs" />
      <Compile Include="Assets\Scripts\DataBase\Datacell\DataCell_model.cs" />
      <Compile Include="Assets\Scripts\DataBase\SqliteDbTest.cs" />
+     <Compile Include="Assets\Scripts\File\FileFrom.cs" />
      <Compile Include="Assets\Scripts\File\FileHelper.cs" />
      <Compile Include="Assets\Scripts\InitProgream\InitProgream.cs" />
      <Compile Include="Assets\Scripts\LoadObject\LoadObject.cs" />
@@ -93,19 +94,19 @@
  <HintPath>D:/Program Files/Unity Hololens 5.4.0b16-HTP/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Data.Sqlite">
- <HintPath>E:/GitHub/YijiaheProject/Assets/Scripts/DataBase/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/YijiaheProject/Assets/Scripts/DataBase/Plugins/Mono.Data.Sqlite.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
- <HintPath>E:/GitHub/YijiaheProject/Assets/Scripts/DataBase/Plugins/System.Data.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/YijiaheProject/Assets/Scripts/DataBase/Plugins/System.Data.dll</HintPath>
  </Reference>
  <Reference Include="System.Windows.Forms">
- <HintPath>E:/GitHub/YijiaheProject/Assets/Scripts/File/Plugins/System.Windows.Forms.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/YijiaheProject/Assets/Scripts/File/Plugins/System.Windows.Forms.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>E:/GitHub/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/YijiaheProject/Assets/Scripts/WwwFun/Plugins/LitJson.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>E:/GitHub/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
+ <HintPath>E:/myselfWork/Git/YijiaheProject/Assets/Scripts/WwwFun/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
